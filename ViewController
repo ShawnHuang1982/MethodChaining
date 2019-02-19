@@ -1,0 +1,27 @@
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+
+    func checkPasswordFormat(password:String){
+        PasswordHelper(check: password)
+            .hasNumber { (status) in
+                //是否有數字
+                //updateUI
+            }
+            .countGreatherThan(6) { (status) in
+                //字數大於8位
+                //updateUI
+            }
+            .includeUpperAndLowerCase{ (status) in
+                //包含大小寫
+                //updateUI
+            }
+    }
+
+
+}
